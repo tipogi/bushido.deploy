@@ -49,9 +49,9 @@ copyTheEnvironmentVariables()
     printInsideBlockOutput "copy library environment files..."
     cp -v $(echo "${ENV_PATH}/${LIBRARY_ENV}/*") $(echo "${BUSHIDO_PATH}/${LIBRARY_ENV}/")
     # Import in the container the environment files
-    printInsideBlockOutput "copy docker container environment files..."
-    mkdir -p $(echo "${DOCKER_CONTAINER_PATH}/${CORE_FOLDER}/") && cp -v $(echo "${ENV_PATH}/${BACKEND_FILE}/.env") $(echo "${DOCKER_CONTAINER_PATH}/${CORE_FOLDER}/")
-    cp -v $(echo "${ENV_PATH}/${APP_CONTAINER}") $(echo "${DOCKER_CONTAINER_PATH}/")
+    #printInsideBlockOutput "copy docker container environment files..."
+    #mkdir -p $(echo "${DOCKER_CONTAINER_PATH}/${CORE_FOLDER}/") && cp -v $(echo "${ENV_PATH}/${BACKEND_FILE}/.env") $(echo "${DOCKER_CONTAINER_PATH}/${CORE_FOLDER}/")
+    #cp -v $(echo "${ENV_PATH}/${APP_CONTAINER}") $(echo "${DOCKER_CONTAINER_PATH}/")
     printBlockFinishOutput "Environment variables imported"
 }
 

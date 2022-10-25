@@ -6,8 +6,8 @@ HOME_DIRECTORY=/home/bushido
 BUSHIDO_PATH="${HOME_DIRECTORY}"/www/bushido.guide
 BUSHIDO_CLIENT_PATH="${SDS_PATH}/app"
 BUSHIDO_SERVER_PATH="${SDS_PATH}/server"
-BUSHIDO_MARKET_PATH="${SDS_PATH}/market"
-BUSHIDO_LIBRARY_PATH="${SDS_PATH}/library"
+BUSHIDO_MARKET_PATH="${SDS_PATH}/bushido.market"
+BUSHIDO_LIBRARY_PATH="${SDS_PATH}/bushido.library"
 
 # Container services
 WWW_PATH=/var/www
