@@ -1,0 +1,8 @@
+# App environment files
+env/app/src/constants/*
+# Server environment files
+env/server/config/environment/*
+env/server/config/external_connections.ts
+# Library environment files
+env/library/cli/src/config/environment
+env/.env
