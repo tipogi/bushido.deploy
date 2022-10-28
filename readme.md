@@ -1,6 +1,6 @@
-# BUSHIDO.GUIDE DEPLOYMENT
+# bushido.guide Deployment
 
-# SCRIPTS
+# Scripts
 Automatise application deploy. Pull services, create the bundle, configure the environments of each service and more
 - **init.sh**: Pull repositories and add its own environment variables
 - **update.sh**: Create the bundles and move to the containers location to spin up the application
@@ -10,7 +10,7 @@ Automatise application deploy. Pull services, create the bundle, configure the e
 # OS
 Which packages needs that deployment to run in some VPS
 
-# DOCKER
+# Docker
 The application containers. After init all the scripts, we run these commands
 ```bash
 # Build all the images
