@@ -1,0 +1,7 @@
+ddbb:
+  scheme: bolt
+  host: localhost
+  port: 7687
+  name: neo4j
+  username: neo4j
+  password: xxxxxx

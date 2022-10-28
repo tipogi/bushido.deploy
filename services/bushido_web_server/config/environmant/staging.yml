@@ -1,0 +1,11 @@
+env: 'staging'
+ddbb:
+  scheme: neo4j
+  host: neo4j-service
+  port: 7687
+  name: neo4j
+  username: neo4j
+  password: xxxxxxxx
+proxy:
+  host: nokyc-api
+  port: 8081

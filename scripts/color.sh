@@ -42,3 +42,10 @@ printBlockErrort()
 ${red}ERROR: ${1}${nc}
 EOF
 }
+
+printImportantMessage()
+{
+    cat <<EOF
+${red}IMPORTANT: ${1}${nc}
+EOF
+}
