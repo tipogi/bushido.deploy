@@ -1,4 +1,4 @@
-# bushido.guide Deployment
+# Deployment of bushido.guide
 
 # Scripts
 Automatise application deploy. Pull services, create the bundle, configure the environments of each service and more
