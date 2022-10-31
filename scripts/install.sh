@@ -7,13 +7,16 @@ updateAllRepositories()
 {
   printBlockStartOutput "Update application layer repositories"
     # Access to services folder and clone and delete all github 
-    cd "$BUSHIDO_DOCKER_PATH"
+    cd "$BUSHIDO_GUIDE_PATH"
     git pull "$BUSHIDO_GUIDE_GITHUB"
     printInsideBlockOutput "bushido.guide updated!"
+    cd "$BUSHIDO_BACKEND_PATH"
     git pull "$BUSHIDO_BACKEND_GITHUB"
     printInsideBlockOutput "bushido.backend updated!"
+    cd "$BUSHIDO_MARKET_PATH"
     git pull "$BUSHIDO_MARKET_GITHUB"
     printInsideBlockOutput "bushido.market updated!"
+    cd "$BUSHIDO_LIBRARY_REPO_PATH"
     git pull "$BUSHIDO_LIBRARY_GITHUB"
     printInsideBlockOutput "bushido.library updated!"
 }
