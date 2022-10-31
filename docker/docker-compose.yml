@@ -50,7 +50,7 @@ services:
     depends_on: 
       - bushido_db
     build: 
-      context: ./bushid.backend/deploy
+      context: ./bushido.backend/deploy
     restart: "no"
     ports:
       - ${BACKEND_PORT}:${BACKEND_PORT}
