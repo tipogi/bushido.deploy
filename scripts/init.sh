@@ -71,7 +71,7 @@ read -p "Would you like to init bushido.guide application? (Y or N): " x
 
 if [[ "$x" = "y" &&  $EUID -ne 0 ]]; then
     highlightOutput $(whoami) ${EUID} "running the script and its id is"
-    print "Do you want to clone or copy environment files? (clone or env):"
+    echo "Do you want to clone or copy environment files? (clone or env):"
     read -p "NOTE: If you decide to copy environment files, first edit all the files acording the environment that you want to setdo not edit the environment files: " y
     if [[ "$y" = "clone" &&  $EUID -ne 0 ]]; then
         createAllTheFolders
