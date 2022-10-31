@@ -38,10 +38,10 @@ echo "- Install npm packages and build the projects (2)"
 echo "- Move the bundles to the right folders (3)"
 read -p "Which option do you want to execute? " x
 
-if [[ "$x" = "2" &&  $EUID -ne 0 ]]; then
+if [[ "$x" = "1" &&  $EUID -ne 0 ]]; then
   updateAllRepositories
 elif [[ "$x" = "2" &&  $EUID -ne 0 ]]; then
   installNodeDependencies
 else
-  echo "That option does not exist"
+  printImportantMessage "That option does not exist"
 fi
