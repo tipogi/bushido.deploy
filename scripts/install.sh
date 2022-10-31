@@ -28,14 +28,20 @@ installNodeDependencies()
   cd "$BUSHIDO_GUIDE_PATH"
   npm install
   printInsideBlockOutput "bushido.guide node_modules installed!"
+  vite build
+  printInsideBlockOutput "bushido.guide production build created!"
   # Install bushido web server node modules
   cd "$BUSHIDO_WEB_SERVER_PATH"
   npm install
   printInsideBlockOutput "bushido.backend node_modules installed!"
+  npm run build
+  printInsideBlockOutput "bushido.backend production build created!"
   # Install bushido web server node modules
   cd "$BUSHIDO_LIBRARY_ROOT_PATH"
   npm install
   printInsideBlockOutput "bushido.library node_modules installed!"
+  npm run build
+  printInsideBlockOutput "bushido.backend production build created!"
 }
 
 # Installation scripts
