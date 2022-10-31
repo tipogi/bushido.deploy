@@ -80,11 +80,12 @@ RUN apk --no-cache add --update \
     python3 py3-pip \
     && pip install nyx
 
-## Data directories
+## Data directories. Inside container
 ENV DATA_DIR=/tor
-ENV SCRIPT_DIR=/src/scripts
-ENV TOR_DIR=/etc/tor
-ENV NYX_DIR=/etc/nyx
+## In the file system, container creation step
+ENV SCRIPT_DIR=/bushido.market/src/scripts
+ENV TOR_DIR=/bushido.market/etc/tor
+ENV NYX_DIR=/bushido.market/etc/nyx
 
 ## Create tor directories
 ## Changed go+rX,u+rwX => 755
