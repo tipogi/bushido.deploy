@@ -3,7 +3,7 @@ FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 # The folder that we will copy all the project
 WORKDIR /app
 
-COPY etc/fastapi/requirements.txt /app/requirements.txt
+COPY bushido.market/etc/fastapi/requirements.txt /app/requirements.txt
 
 # Install the pip and project dependencies packages
 RUN /usr/local/bin/python -m pip install --upgrade pip && \
