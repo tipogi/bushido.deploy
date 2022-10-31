@@ -50,7 +50,7 @@ manageClientAppBundle()
   cd "$BUSHIDO_GUIDE_PATH"
   mv dist app
   mkdir -p "$APP_FOLDER"
-  mv -r -v app /var/www/bushido/
+  mv -v app /var/www/bushido/
   printBlockFinishOutput "bushido.guide application moved to www folder!"
 }
 
