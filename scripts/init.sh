@@ -23,10 +23,6 @@ createAllTheFolders()
 cloneRepositories()
 {
     printBlockStartOutput "Clone application layer repositories"
-    # Access to bushido working directory and clone the deployment repository
-    cd "$BUSHIDO_HOME_PATH"
-    git clone "$BUSHIDO_DEPLOY_GITHUB"
-    printInsideBlockOutput "bushido.deploy clonned!"
     # Access to services folder and clone and delete all github 
     cd "$BUSHIDO_DOCKER_PATH"
     git clone "$BUSHIDO_GUIDE_GITHUB"
@@ -54,7 +50,7 @@ copyTheServicesParameters()
     printInsideBlockOutput "copy ddbb environment files..."
     cp -r -v $(echo "${DB_PARAM_PATH}/neo4j") $(echo "${BUSHIDO_DDBB_PATH}/")
     cp -v $(echo "${DB_PARAM_PATH}/.env") $(echo "${BUSHIDO_DDBB_PATH}/")
-    # Import ddbb (app) environment files
+    # Import bushido web server environment files
     printInsideBlockOutput "copy bushido web server files..."
     cp -r -v $(echo "${WEB_SERVER_PARAM_PATH}/config") $(echo "${BUSHIDO_WEB_SERVER_PATH}/")
     printImportantMessage "DO NOT FORGET TO IMPORT .env, Dockerfile and init.sh after bundle creation"
