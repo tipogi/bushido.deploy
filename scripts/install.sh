@@ -64,7 +64,9 @@ manageWebServerBundle()
   mv -v core deploy/
   cp -v $(echo "${WEB_SERVER_PARAM_PATH}/.env") $(echo "${BUSHIDO_DEPLOY_WEB_SERVER_PATH}/core/") 
   cp -v $(echo "${WEB_SERVER_PARAM_PATH}/Dockerfile") $(echo "${BUSHIDO_DEPLOY_WEB_SERVER_PATH}/") 
-  cp -v $(echo "${WEB_SERVER_PARAM_PATH}/init.sh") $(echo "${BUSHIDO_DEPLOY_WEB_SERVER_PATH}/")
+  cp -v $(echo "${WEB_SERVER_PARAM_PATH}/init.sh") $(echo "${BUSHIDO_DEPLOY_WEB_SERVER_PATH}/")  
+  # Copy all the project dependecias to install inside the container
+  cp -v $(echo "${BUSHIDO_BACKEND_PATH}/package.json") $(echo "${BUSHIDO_DEPLOY_WEB_SERVER_PATH}/core/")  
   printBlockFinishOutput "bushido web server ready to spin up as container!"
 }
 

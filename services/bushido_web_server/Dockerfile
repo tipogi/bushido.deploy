@@ -14,12 +14,12 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # Install node modules
-COPY bushido.backend/deploy/core /app
+COPY core /app
 
 # Install all the service node dependencies
 RUN npm install
 
-COPY bushido.backend/deploy/init.sh /app/
+COPY init.sh /app/
 
 # Control the SIGTERM of the process with tini
 # INFO: It will wait for it to exit all the while 

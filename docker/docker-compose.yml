@@ -35,12 +35,12 @@ services:
     image: neo4j:4.4.9
     volumes:
       # Mount the neo4j configuration file to container    
-      - ./bushid.backend/database/neo4j/conf:/conf
+      - ./bushido.backend/database/neo4j/conf:/conf
       # Mount the data to container
-      - ./bushid.backend/database/neo4j/data:/data
-      - ./bushid.backend/database/neo4j/import:/import
-      - ./bushid.backend/database/neo4j/logs:/logs
-      - ./bushid.backend/database/neo4j/plugins:/plugins
+      - ./bushido.backend/database/neo4j/data:/data
+      - ./bushido.backend/database/neo4j/import:/import
+      - ./bushido.backend/database/neo4j/logs:/logs
+      - ./bushido.backend/database/neo4j/plugins:/plugins
     env_file: ./bushido.backend/database/.env
     networks:
        - ${BUSHIDO_NETWORK}
