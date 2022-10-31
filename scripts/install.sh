@@ -49,14 +49,14 @@ manageCreatedBundles()
   # Move to nginx
   cd "$BUSHIDO_GUIDE_PATH"
   mv dist app
-  cp -rv app /var/www/bushido/
+  cp -r -v app /var/www/bushido/
   printBlockFinishOutput "bushido.guide application moved to www folder!"
   printInsideBlockOutput "Configure bushido web server container"
   cd "$BUSHIDO_BACKEND_PATH"
   # Create a folder to spin up the container
   mkdir deploy
   mv dist core
-  mv -r -v core deploy/
+  mv -v core deploy/
   cp -v $(echo "${WEB_SERVER_PARAM_PATH}/.env") $(echo "${BUSHIDO_DEPLOY_WEB_SERVER_PATH}/core/") 
   cp -v $(echo "${WEB_SERVER_PARAM_PATH}/Dockerfile") $(echo "${BUSHIDO_DEPLOY_WEB_SERVER_PATH}/") 
   cp -v $(echo "${WEB_SERVER_PARAM_PATH}/init.sh") $(echo "${BUSHIDO_DEPLOY_WEB_SERVER_PATH}/")
@@ -74,7 +74,7 @@ if [[ "$x" = "1" &&  $EUID -ne 0 ]]; then
   updateAllRepositories
 elif [[ "$x" = "2" &&  $EUID -ne 0 ]]; then
   installNodeDependencies
-elif [[ "$x" = "3" &&  $EUID -ne 0 ]]; then
+elif [[ "$x" = "2" &&  $EUID -ne 0 ]]; then
   manageCreatedBundles
 else
   printImportantMessage "That option does not exist"
