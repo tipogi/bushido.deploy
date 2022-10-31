@@ -76,8 +76,10 @@ if [[ "$x" = "y" &&  $EUID -ne 0 ]]; then
     if [[ "$y" = "clone" &&  $EUID -ne 0 ]]; then
         createAllTheFolders
         cloneRepositories
+    fi
     if [[ "$y" = "env" &&  $EUID -ne 0 ]]; then
         copyTheServicesParameters
+    fi
 else
     echo "- Check the file path constants (path.sh)"
     echo "- There is not any prior configuration just the pop-up to enter repository password"
