@@ -41,7 +41,7 @@ services:
       - ./bushid.backend/database/neo4j/import:/import
       - ./bushid.backend/database/neo4j/logs:/logs
       - ./bushid.backend/database/neo4j/plugins:/plugins
-    env_file: ./bushid.backend/database/.env
+    env_file: ./bushido.backend/database/.env
     networks:
        - ${BUSHIDO_NETWORK}
   bushido_web_server:
