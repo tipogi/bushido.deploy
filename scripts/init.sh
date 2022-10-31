@@ -17,7 +17,6 @@ createAllTheFolders()
 {
     echo ">> Create the folder to clone the projects and to compile the builds <<"
     mkdir -p "$BUSHIDO_HOME_PATH"
-    mkdir -p "$APP_FOLDER"
 }
 
 cloneRepositories()

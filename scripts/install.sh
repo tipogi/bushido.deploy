@@ -44,13 +44,18 @@ installNodeDependencies()
   printBlockFinishOutput "bushido.backend production build created!"
 }
 
-manageCreatedBundles() 
+manageClientAppBundle() 
 {
-  # Move to nginx
+  highlightOutput $(whoami) ${EUID} "running the script and its id is"
   cd "$BUSHIDO_GUIDE_PATH"
   mv dist app
+  mkdir -p "$APP_FOLDER"
   cp -r -v app /var/www/bushido/
   printBlockFinishOutput "bushido.guide application moved to www folder!"
+}
+
+manageCreatedBundles() 
+{
   printInsideBlockOutput "Configure bushido web server container"
   cd "$BUSHIDO_BACKEND_PATH"
   # Create a folder to spin up the container
@@ -67,7 +72,8 @@ manageCreatedBundles()
 printImportantMessage "In /var/www it has to be created bushido folder, if not we will not create app folder"
 echo "- Update all the repositories (1)"
 echo "- Install npm packages and build the projects (2)"
-echo "- Move the bundles to the right folders (3)"
+printImportantMessage "- Move client app the bundle. Attention: Here you have to run as a root user (3)"
+echo "- Move the web server bundle (4)"
 read -p "Which option do you want to execute? " x
 
 if [[ "$x" = "1" &&  $EUID -ne 0 ]]; then
@@ -75,7 +81,9 @@ if [[ "$x" = "1" &&  $EUID -ne 0 ]]; then
 elif [[ "$x" = "2" &&  $EUID -ne 0 ]]; then
   installNodeDependencies
 elif [[ "$x" = "3" &&  $EUID -ne 0 ]]; then
-  manageCreatedBundles
+  manageClientAppBundle
+elif [[ "$x" = "4" &&  $EUID -ne 0 ]]; then
+  manageWebServerBundle
 else
   printImportantMessage "That option does not exist"
 fi

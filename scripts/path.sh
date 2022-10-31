@@ -4,7 +4,7 @@ HOME_DIRECTORY=/home/bushido
 
 # CLIENT path
 WWW_PATH=/var/www
-APP_FOLDER="${WWW_PATH}bushido/app"
+APP_FOLDER="${WWW_PATH}/bushido"
 
 BUSHIDO_DEPLOY_GITHUB=https://github.com/tipogi/bushido.deploy.git
 BUSHIDO_GUIDE_GITHUB=https://github.com/tipogi/bushido.guide.git
