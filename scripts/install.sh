@@ -54,7 +54,7 @@ manageClientAppBundle()
   printBlockFinishOutput "bushido.guide application moved to www folder!"
 }
 
-manageCreatedBundles() 
+manageWebServerBundle() 
 {
   printInsideBlockOutput "Configure bushido web server container"
   cd "$BUSHIDO_BACKEND_PATH"
