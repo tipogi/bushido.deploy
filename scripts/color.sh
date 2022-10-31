@@ -36,6 +36,7 @@ ${yellow}--> ${1}${nc}
 EOF
 }
 
+
 printBlockErrort()
 {
     cat <<EOF
@@ -47,5 +48,12 @@ printImportantMessage()
 {
     cat <<EOF
 ${red}IMPORTANT: ${1}${nc}
+EOF
+}
+
+printImportantListPoint()
+{
+    cat <<EOF
+${red}- ${1}${nc}
 EOF
 }

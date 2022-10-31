@@ -72,7 +72,7 @@ manageCreatedBundles()
 printImportantMessage "In /var/www it has to be created bushido folder, if not we will not create app folder"
 echo "- Update all the repositories (1)"
 echo "- Install npm packages and build the projects (2)"
-printImportantMessage "- Move client app the bundle. Attention: Here you have to run as a root user (3)"
+printImportantListPoint "Move client app the bundle. Attention: Here you have to run as a root user (3)"
 echo "- Move the web server bundle (4)"
 read -p "Which option do you want to execute? " x
 
