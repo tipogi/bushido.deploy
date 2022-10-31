@@ -74,6 +74,8 @@ if [[ "$x" = "1" &&  $EUID -ne 0 ]]; then
   updateAllRepositories
 elif [[ "$x" = "2" &&  $EUID -ne 0 ]]; then
   installNodeDependencies
+elif [[ "$x" = "3" &&  $EUID -ne 0 ]]; then
+  manageCreatedBundles
 else
   printImportantMessage "That option does not exist"
 fi
