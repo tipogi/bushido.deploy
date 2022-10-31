@@ -81,7 +81,7 @@ if [[ "$x" = "1" &&  $EUID -ne 0 ]]; then
   updateAllRepositories
 elif [[ "$x" = "2" &&  $EUID -ne 0 ]]; then
   installNodeDependencies
-elif [[ "$x" = "3" &&  $EUID -ne 0 ]]; then
+elif [[ "$x" = "3" &&  $EUID == 0 ]]; then
   manageClientAppBundle
 elif [[ "$x" = "4" &&  $EUID -ne 0 ]]; then
   manageWebServerBundle
