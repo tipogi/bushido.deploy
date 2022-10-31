@@ -35,20 +35,3 @@ BUSHIDO_WEB_SERVER_PATH="${BUSHIDO_DOCKER_PATH}/bushido.backend/src"
 BUSHIDO_DEPLOY_WEB_SERVER_PATH="${BUSHIDO_DOCKER_PATH}/bushido.backend/deploy"
 BUSHIDO_LIBRARY_PATH="${BUSHIDO_DOCKER_PATH}/bushido.library/cli/src"
 BUSHIDO_MARKET_PATH="${BUSHIDO_DOCKER_PATH}/bushido.market"
-
-
-
-
-
-
-
-# Environment path
-ENV_PATH="${BUSHIDO_PATH}"/env
-# Client - app
-CLIENT_ENV=app/src/constants
-# Server - backend
-SERVER_ENV=server/nestJS/src/config
-# Bookmarks
-LIBRARY_ENV=library/cli/src/config/environment
-# Docker
-DOCKER_CONTAINER_EN=docker/.env

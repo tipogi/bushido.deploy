@@ -61,6 +61,7 @@ copyTheServicesParameters()
     # Import bushido.library environment file
     printInsideBlockOutput "copy bushido.library environment files..."
     cp -r -v $(echo "${LIBRARY_PARAM_PATH}/config") $(echo "${BUSHIDO_LIBRARY_PATH}/")
+    cp -v $(echo "${LIBRARY_PARAM_PATH}/.env") $(echo "${BUSHIDO_LIBRARY_PATH}/")
      # Import bushido.market docker files
     printInsideBlockOutput "copy bushido.library docker files..."
     cp -v $(echo "${NOKYC_PARAM_PATH}/Dockerfile") $(echo "${BUSHIDO_MARKET_PATH}/etc/fastapi")
