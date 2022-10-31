@@ -44,7 +44,27 @@ installNodeDependencies()
   printBlockFinishOutput "bushido.backend production build created!"
 }
 
+manageCreatedBundles() 
+{
+  # Move to nginx
+  cd "$BUSHIDO_GUIDE_PATH"
+  mv dist app
+  cp -rv app /var/www/bushido/
+  printBlockFinishOutput "bushido.guide application moved to www folder!"
+  printInsideBlockOutput "Configure bushido web server container"
+  cd "$BUSHIDO_BACKEND_PATH"
+  # Create a folder to spin up the container
+  mkdir deploy
+  mv dist core
+  mv -r -v core deploy/
+  cp -v $(echo "${WEB_SERVER_PARAM_PATH}/.env") $(echo "${BUSHIDO_DEPLOY_WEB_SERVER_PATH}/core/") 
+  cp -v $(echo "${WEB_SERVER_PARAM_PATH}/Dockerfile") $(echo "${BUSHIDO_DEPLOY_WEB_SERVER_PATH}/") 
+  cp -v $(echo "${WEB_SERVER_PARAM_PATH}/init.sh") $(echo "${BUSHIDO_DEPLOY_WEB_SERVER_PATH}/")
+  printBlockFinishOutput "bushido web server ready to spin up as container!"
+}
+
 # Installation scripts
+printImportantMessage "In /var/www it has to be created bushido folder, if not we will not create app folder"
 echo "- Update all the repositories (1)"
 echo "- Install npm packages and build the projects (2)"
 echo "- Move the bundles to the right folders (3)"

@@ -2,3 +2,6 @@ docker/bushido.guide
 docker/bushido-backend
 docker/bushido.library
 docker/bushido.market
+
+# Application nginx configuration file
+services/app/default.conf
