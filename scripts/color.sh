@@ -54,6 +54,6 @@ EOF
 printImportantListPoint()
 {
     cat <<EOF
-${red}- ${1}${nc}
+${yellow}- ${1}${nc}
 EOF
 }

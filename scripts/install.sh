@@ -74,6 +74,7 @@ echo "- Update all the repositories (1)"
 echo "- Install npm packages and build the projects (2)"
 printImportantListPoint "Move client app the bundle. Attention: Here you have to run as a root user (3)"
 echo "- Move the web server bundle (4)"
+highlightOutput $(whoami) ${EUID} "running the script and its id is"
 read -p "Which option do you want to execute? " x
 
 if [[ "$x" = "1" &&  $EUID -ne 0 ]]; then
