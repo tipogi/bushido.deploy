@@ -33,4 +33,4 @@ sudo yum install htop
 ### SELinux
 Deactivate SELinux to be more permissive the system. [Here](https://www.tecmint.com/disable-selinux-in-centos-rhel-fedora/)
 
-# SERVER REQUIREMENTS
+# Server requirements
