@@ -21,6 +21,10 @@ RUN npm install
 
 COPY init.sh /app/
 
+## Docker health check
+HEALTHCHECK --interval=300s --timeout=15s --start-period=20s --retries=3 \
+            CMD curl http://bushido-api:4000/api/healthcheck
+
 # Control the SIGTERM of the process with tini
 # INFO: It will wait for it to exit all the while 
 # reaping zombies and performing signal forwarding.

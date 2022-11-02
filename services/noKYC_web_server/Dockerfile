@@ -9,6 +9,10 @@ COPY bushido.market/etc/fastapi/requirements.txt /app/requirements.txt
 RUN /usr/local/bin/python -m pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
+## Docker health check
+HEALTHCHECK --interval=300s --timeout=15s --start-period=20s --retries=3 \
+            CMD curl http://nokyc-api:8081/docker-healthcheck
+
 # That variable will be find in the run.sh
 # run.sh is a clone of start-reload.sh which is located by default in the root path
 ENV PORT=8081
