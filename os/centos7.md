@@ -41,6 +41,16 @@ sudo systemctl enable --now nginx
 ### docker
 Set up docker repository to install the docker engine. More info [here](https://docs.docker.com/engine/install/centos/#set-up-the-repository).
 **IMPORTANT. Not run as a admin user**. For that we will add our user in the docker group. More info [here](https://docs.docker.com/engine/install/linux-postinstall/)
+Also add the experimental features
+```bash
+vim /etc/docker/daemon.json
+# Add the following content
+{
+  "features": {
+    "buildkit" : true
+  }
+}
+```
 ### nvm (Node version manager)
 Install the library to manage different version of nodeJS. [Here](https://github.com/nvm-sh/nvm#git-install) how to install using git
 ```bash
