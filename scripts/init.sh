@@ -49,14 +49,18 @@ copyTheServicesParameters()
     printInsideBlockOutput "copy ddbb environment files..."
     cp -r -v $(echo "${DB_PARAM_PATH}/neo4j") $(echo "${BUSHIDO_DDBB_PATH}/")
     cp -v $(echo "${DB_PARAM_PATH}/.env") $(echo "${BUSHIDO_DDBB_PATH}/")
-    # Import bushido web server environment files
-    printInsideBlockOutput "copy bushido web server files..."
-    cp -r -v $(echo "${WEB_SERVER_PARAM_PATH}/config") $(echo "${BUSHIDO_WEB_SERVER_PATH}/")
-    printImportantMessage "DO NOT FORGET TO IMPORT .env, Dockerfile and init.sh after bundle creation"
     # Import bushido.library environment file
     printInsideBlockOutput "copy bushido.library environment files..."
     cp -r -v $(echo "${LIBRARY_PARAM_PATH}/config") $(echo "${BUSHIDO_LIBRARY_PATH}/")
     cp -v $(echo "${LIBRARY_PARAM_PATH}/.env") $(echo "${BUSHIDO_LIBRARY_PATH}/")
+    # Import bushido web server environment files
+    printInsideBlockOutput "copy bushido web server files..."
+    cp -r -v $(echo "${WEB_SERVER_PARAM_PATH}/config") $(echo "${BUSHIDO_WEB_SERVER_PATH}/")
+    printImportantMessage "DO NOT FORGET TO IMPORT .env, Dockerfile and init.sh after bundle creation"
+    # Import bushido docker files
+    printInsideBlockOutput "copy bushido docker files..."
+    cp -v $(echo "${DOCKER_PATH}/.env") $(echo "${BUSHIDO_DOCKER_PATH}/")
+    cp -v $(echo "${DOCKER_PATH}/docker-compose.yml") $(echo "${BUSHIDO_DOCKER_PATH}/")
      # Import bushido.market docker files
     printInsideBlockOutput "copy bushido.library docker files..."
     cp -v $(echo "${NOKYC_PARAM_PATH}/Dockerfile") $(echo "${BUSHIDO_MARKET_PATH}/etc/fastapi")
