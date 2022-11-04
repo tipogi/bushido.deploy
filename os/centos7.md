@@ -57,6 +57,13 @@ Install the library to manage different version of nodeJS. [Here](https://github
 # After installation, activate node the latest version. First check available versions
 nvm ls-remote
 nvm install 16.18.0
+# Usefull commands
+# Print the current nodeJS version
+nvm current
+# Print all nodeJS available versions
+nvm ls
+# Set the nodeJS version
+nvm use 16.18.0
 ```
 ### Process viewer
 ```bash
@@ -74,10 +81,5 @@ sudo systemctl enable fail2ban
 ### SELinux
 Deactivate SELinux to be more permissive the system. [Here](https://www.tecmint.com/disable-selinux-in-centos-rhel-fedora/)
 
-
-
-
-
-
-
 # Server requirements
+- At least 2GB of RAM (2048MB)

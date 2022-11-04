@@ -25,8 +25,8 @@ Which packages needs that deployment to run in some VPS
 The application containers. After init all the scripts, we run these commands
 ```bash
 # Build all the images
-DOCKER_BUILDKIT=1 docker-compose build
+DOCKER_BUILDKIT=1 docker compose build
 # Spin up the container
-docker-compose up
+docker compose up
 ```
 Also, we have to edit the .env file to set the neo4J credentials

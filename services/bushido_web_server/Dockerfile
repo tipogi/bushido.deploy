@@ -23,7 +23,7 @@ COPY init.sh /app/
 
 ## Docker health check
 HEALTHCHECK --interval=300s --timeout=15s --start-period=20s --retries=3 \
-            CMD curl http://bushido-api:4000/api/healthcheck
+            CMD curl http://bushido-api:4000/api/docker-healthcheck
 
 # Control the SIGTERM of the process with tini
 # INFO: It will wait for it to exit all the while 
