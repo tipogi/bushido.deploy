@@ -1,4 +1,5 @@
-docker
+/docker/*
+!/docker/task.todo
 
 # Application nginx configuration file
 services/app/default.conf
