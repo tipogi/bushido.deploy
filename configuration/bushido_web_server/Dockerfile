@@ -1,7 +1,7 @@
 FROM node:16.17.0-alpine3.16 as development
 
-# Install tini
-RUN apk add --no-cache tini
+# Install tini and curl (if not we cannot do healthcheck)
+RUN apk add --no-cache tini curl
 
 # Install globally some libraries to fix the errors that throws pm2 while is installing
 #RUN npm install uuid fsevents@latest -f -g --save-optional
@@ -22,7 +22,7 @@ RUN npm install
 COPY init.sh /app/
 
 ## Docker health check
-HEALTHCHECK --interval=300s --timeout=15s --start-period=20s --retries=3 \
+HEALTHCHECK --interval=300s --timeout=15s --start-period=60s --retries=3 \
             CMD curl http://bushido-api:4000/api/docker-healthcheck
 
 # Control the SIGTERM of the process with tini

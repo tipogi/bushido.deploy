@@ -10,7 +10,7 @@ RUN /usr/local/bin/python -m pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 ## Docker health check
-HEALTHCHECK --interval=300s --timeout=15s --start-period=20s --retries=3 \
+HEALTHCHECK --interval=300s --timeout=15s --start-period=60s --retries=3 \
             CMD curl http://nokyc-api:8081/docker-healthcheck
 
 # That variable will be find in the run.sh
