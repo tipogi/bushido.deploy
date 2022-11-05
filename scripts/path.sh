@@ -13,7 +13,7 @@ BUSHIDO_MARKET_GITHUB=https://github.com/tipogi/bushido.market.git
 BUSHIDO_LIBRARY_GITHUB=https://github.com/tipogi/bushido.library.git
 
 # DEPLOY path
-BUSHIDO_HOME_PATH="${HOME_DIRECTORY}/www/bushido.guide"
+BUSHIDO_HOME_PATH="${HOME_DIRECTORY}/www"
 DEPLOY_PATH="${BUSHIDO_HOME_PATH}/bushido.deploy"
 
 # FOLDERS

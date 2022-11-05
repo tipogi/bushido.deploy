@@ -12,7 +12,7 @@ passwd dust
 # Add in wheel (sudoers) group
 usermod -aG wheel dust
 # Disconnect from the root user and open a new ssh connection with dust (new user)
-
+```
 
 ## Installtion and configuration of the system
 
@@ -41,6 +41,10 @@ sudo yum install dnf -y
 sudo dnf upgrade
 ```
 
+### SELinux
+
+Deactivate SELinux to be more permissive the system. [Here](https://www.tecmint.com/disable-selinux-in-centos-rhel-fedora/)
+
 ### git
 
 ```bash
@@ -68,11 +72,34 @@ sudo dnf -y install epel-release
  nginx
 
 ```bash
-sudo yum install epel-release
 #now install nginx
 sudo dnf install nginx
 # Enable to run in the system init
 sudo systemctl enable --now nginx
+```
+
+### LetsEncrypt
+
+Create lets encrypt issued certificated to secure client/server communication, [source](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-centos-7)
+
+```bash
+sudo dnf install -y epel-release mod_ssl
+sudo dnf install certbot-nginx
+sudo dnf install nginx
+sudo systemctl start nginx
+sudo vi /etc/nginx/nginx.conf
+# Edit server name field with our domain 
+sudo systemctl reload nginx
+# IMPORTANT: If we do not open the ports, lets encrypt cannot negotiate with our server
+# URL: https://letsencrypt.org/how-it-works/
+sudo firewall-cmd --add-service=http
+sudo firewall-cmd --add-service=https
+sudo firewall-cmd --runtime-to-permanent
+# Create certificate
+sudo certbot --nginx -d example.com [-d www.example.com]
+# Set up the crontab
+sudo crontab -e
+0 0 * * 1 sudo /usr/bin/certbot renew >> /var/log/sslrenew.log
 ```
 
 ### docker
@@ -127,10 +154,6 @@ Control the ssh logins with some rules and act if some some malicious actor want
 sudo dnf install fail2ban
 sudo systemctl enable fail2ban
 ```
-
-### SELinux
-
-Deactivate SELinux to be more permissive the system. [Here](https://www.tecmint.com/disable-selinux-in-centos-rhel-fedora/)
 
 ## Server requirements
 
