@@ -3,3 +3,4 @@
 
 # Application nginx configuration file
 /configuration/app/default.conf
+/configuration/app/bushido.guide.conf
