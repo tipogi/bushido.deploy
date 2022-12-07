@@ -1,4 +1,16 @@
-# Deployment of bushido.guide
+# Overview
+Automatise bushido.guide deployment in a VPS
+
+# Motivation
+It creates a four different containers: database (neo4j), [bushido web server](https://github.com/tipogi/bushido-backend) and market web server and tor proxy from [market web server](https://github.com/tipogi/bushido.market)
+
+![architecture](./docs/assets/arch.png)
+
+The only container that external actors can access is bushido web server, the other containers access, is allowed just inside of the docker network.
+
+After we have another two services outside of the containers, which have different responsabilities:
+- `bushido.guide`: It is the client of the application and nginx delivers that files to the end-user
+- [`bushido.library`](https://github.com/tipogi/bushido.library): Feeds the graph database with topics and domains
 
 # Scripts
 Automatise application deploy. Pull services, create the bundle, configure the environments of each service and more
