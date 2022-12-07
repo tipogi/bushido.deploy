@@ -14,7 +14,7 @@ Also, it has another two services outside of the containers which have different
 
 > When we want to use `bushido.library`, we have to open the Neo4J ports to localhost because by default the ports are open inside of the container
 
-# Folders
+## Folders
 The repository has different folders with some utility in the process of deploying the application
 - `configuration`: All the constant files that has to be edited before spin up the container
 - `docker`: All the containers directory. At the beginning empty but with the execution of the script, it will start populating
@@ -26,17 +26,12 @@ The repository has different folders with some utility in the process of deployi
   - *color.sh*: Terminal coloring helper function
   - *path.sh*: Path constants helper
 
-
-
-# OS
-Which packages needs that deployment to run in some VPS
-
-# Docker
-The application containers. After init all the scripts, we run these commands
+## Docker
+After execute all the scripts, it is time to build our container and run it
 ```bash
-# Build all the images
+# Build all the images. Experimental feature to build in parallel
 DOCKER_BUILDKIT=1 docker compose build
 # Spin up the container
 docker compose up
 ```
-Also, we have to edit the .env file to set the neo4J credentials
+> Once we create a neo4j container, the credentials will not change even we change the `.env` file. We need to delete the container to add new environment variables
