@@ -17,10 +17,10 @@ The repository has different folders with some utility in the process of deployi
 - `configuration`: All the constant files that has to be edited before spin up the container
 - `docker`: All the containers directory
 - `scripts`: Automatise application deploy. Pull services, create the bundle, configure the environments of each service and more.
-  - **init.sh**: Pull repositories and add its own environment variables
-  - **install.sh**: Create the bundles and move to the containers location to spin up the application
-  - **color.sh**: Terminal coloring helper function
-  - **path.sh**: Path constants helper
+  - *init.sh*: Pull repositories and add its own environment variables
+  - *install.sh*: Create the bundles and move to the containers location to spin up the application
+  - *color.sh*: Terminal coloring helper function
+  - *path.sh*: Path constants helper
 
 
 
