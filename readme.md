@@ -12,6 +12,19 @@ Also, it has another two services outside of the containers which have different
 - `bushido.guide`: It is the client of the application and nginx delivers that files to the end-user
 - [`bushido.library`](https://github.com/tipogi/bushido.library): Feeds the graph database with topics and domains
 
+# Folders
+The repository has different folders with some utility in the process of deploying the application
+- `configuration`: All the constant files that has to be edited before spin up the container
+- `docker`: All the containers directory
+- `scripts`: Automatise application deploy. Pull services, create the bundle, configure the environments of each service and more.
+  - **init.sh**: Pull repositories and add its own environment variables
+  - **install.sh**: Create the bundles and move to the containers location to spin up the application
+  - **color.sh**: Terminal coloring helper function
+  - **path.sh**: Path constants helper
+
+
+
+
 # Scripts
 Automatise application deploy. Pull services, create the bundle, configure the environments of each service and more
 - **init.sh**: Pull repositories and add its own environment variables. Environment files to edit inside docker folder:
