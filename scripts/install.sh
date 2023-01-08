@@ -27,36 +27,36 @@ installNodeDependencies()
   # Install client node modules
   cd "$BUSHIDO_GUIDE_PATH"
   read -p "Would you like to update bushido.guide node_modules? (Y or N): " x
-  if [[ "$x" = "y"]]; then
+  if [[ "$x" = "y" ]]; then
     npm install
     printInsideBlockOutput "bushido.guide node_modules installed!"
   fi
   read -p "Would you like to create new bundle of bushido.guide? (Y or N): " x
-  if [[ "$x" = "y"]]; then
+  if [[ "$x" = "y" ]]; then
     npm run build
     printBlockFinishOutput "bushido.guide production build created!"
   fi
   # Install bushido web server node modules
   cd "$BUSHIDO_WEB_SERVER_PATH"
   read -p "Would you like to update bushido.backend node_modules? (Y or N): " x
-  if [[ "$x" = "y"]]; then
+  if [[ "$x" = "y" ]]; then
     npm install
     printInsideBlockOutput "bushido.backend node_modules installed!"
   fi
   read -p "Would you like to create new bundle of bushido.backend? (Y or N): " x
-  if [[ "$x" = "y"]]; then
+  if [[ "$x" = "y" ]]; then
     npm run build
     printBlockFinishOutput "bushido.backend production build created!"
   fi
   # Install bushido web server node modules
   cd "$BUSHIDO_LIBRARY_ROOT_PATH"
   read -p "Would you like to update bushido.library node_modules? (Y or N): " x
-  if [[ "$x" = "y"]]; then
+  if [[ "$x" = "y" ]]; then
     npm install
     printInsideBlockOutput "bushido.library node_modules installed!"
   fi
   read -p "Would you like to create new bundle of bushido.library? (Y or N): " x
-  if [[ "$x" = "y"]]; then
+  if [[ "$x" = "y" ]]; then
     npm run build
     printBlockFinishOutput "bushido.backend production build created!"
   fi
