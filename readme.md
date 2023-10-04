@@ -35,3 +35,22 @@ DOCKER_BUILDKIT=1 docker compose build
 docker compose up
 ```
 > Once we create a neo4j container, the credentials will not change even we change the `.env` file. We need to delete the container to add new environment variables
+
+## Update domains
+1. Stop docker: `docker compose down`. If not, when we create the client bundle, the server runs out all resources
+2. Run install script: `./scripts/install.sh`
+  2.1. Update the repositories. Library, client or server
+  2.2. Install packages or/and create new bundles
+  2.3. In the (3) option, we should run as root and the actual client (`/var/www/bushido/app`) move to legacy folder with version number before run the 3rd option
+3. Open the local port for Neo4J in `docker-compose.yml`. [`bushido.library`](https://github.com/tipogi/bushido.library) has to feed the actual database
+```yml
+ports
+  - 127.0.0.1:7687:7687 
+```
+4. Spin up the containers: `docker compose up -d`
+5. Go to `./docker/bushido.library/cli` and run the commands to update the database
+  5.1. Generate the new files: `npm run bushido-cli generate`
+  5.2. Create/Update the graph: `npm run bushido-cli import topic`
+  5.3. Add/update domains: `npm run bushido-cli import domain`
+6. Stop docker, close the port to access locally to the database and spin up the container
+7. READY!
